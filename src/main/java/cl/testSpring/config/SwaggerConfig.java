@@ -5,7 +5,6 @@ import java.util.Collections;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import cl.testSpring.DemoApplication;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -22,7 +21,7 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage(DemoApplication.class.getPackageName()))
+				.apis(RequestHandlerSelectors.basePackage("cl.testSpring"))
 				.paths(PathSelectors.any())
 				.build()
 				.apiInfo(apiInfo());
